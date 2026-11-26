@@ -12,7 +12,7 @@ import requests
 # GOOGLE SHEETS
 # =========================================================
 
-GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQeTO-2tCHWLT6qJOUUIadywyp1GO8MHHRkHkMzNFjfskCjH97Wu2FuJHHWH8rTLwaqcq8rBcPCl7C_/pub?output=csv"
+GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1r4clPJ8iUFk37sDsPTbdHwE8hj7dLUlczk0__Ws6kDk/edit?gid=1310332897#gid=1310332897"
 
 GOOGLE_CALENDAR_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQtFKVcWHp5Zu--wYNHdQNXGtKiNwN1wVXx4YJQQDXTatfK8E11d-bjpoSEjGTp1JLU9Gft0fkRvTbr/pub?output=csv"
 
