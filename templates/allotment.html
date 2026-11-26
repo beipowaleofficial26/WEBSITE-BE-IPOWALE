@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IPO Allotment Status | Check Mainboard IPO Allotment Online | BE.IPOWALE</title>
+
+<meta name="description"
+      content="Check the latest Mainboard IPO allotment status online at BE.IPOWALE. Get official registrar links for KFin Technologies, MUFG Intime, Link Intime, Bigshare, Skyline and Purva Sharegistry with fast IPO allotment updates.">
+
+<meta name="keywords"
+      content="IPO Allotment Status, Mainboard IPO, IPO Status, IPO Allotment Checker, KFin IPO Status, MUFG Intime IPO, Link Intime IPO, Bigshare IPO, Skyline IPO, Purva IPO, IPO Result, IPO Registrar, BE.IPOWALE">
+
+<meta name="author" content="BE.IPOWALE">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta name="revisit-after" content="1 days">
+<meta name="rating" content="General">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://beipowale.onrender.com/allotment">
+
+<!-- Favicon -->
+<link rel="icon" href="{{ url_for('static', filename='logo.jpg') }}">
+
+<!-- Theme -->
+<meta name="theme-color" content="#0f172a">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="IPO Allotment Status | BE.IPOWALE">
+<meta property="og:description"
+      content="Check Mainboard IPO allotment status from official registrars including KFin Technologies, MUFG Intime, Link Intime, Bigshare, Skyline and Purva.">
+<meta property="og:url" content="https://beipowale.onrender.com/allotment">
+<meta property="og:site_name" content="BE.IPOWALE">
+<meta property="og:image"
+      content="https://beipowale.onrender.com/static/logo.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IPO Allotment Status | BE.IPOWALE">
+<meta name="twitter:description"
+      content="Check the latest Mainboard IPO allotment status from official IPO registrars.">
+<meta name="twitter:image"
+      content="https://beipowale.onrender.com/static/logo.jpg">
+
+<!-- Mobile -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Fonts & CSS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/allotment.css') }}">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "IPO Allotment Status",
+  "url": "https://beipowale.onrender.com/allotment",
+  "description": "Check Mainboard IPO allotment status through official IPO registrars.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "BE.IPOWALE",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://beipowale.onrender.com/static/logo.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <img src="{{ url_for('static', filename='logo.jpg') }}"
+             class="brand-logo"
+             alt="BE.IPOWALE">
+
+        <span class="brand-name">
+            BE.IPOWALE
+        </span>
+
+        <h1>
+            IPO Allotment Status
+        </h1>
+
+        <p>
+            Check IPO Allotment from Official Registrars
+            <br>
+            Fast • Trusted • Mainboard IPOs
+        </p>
+
+        <div class="hero-badges">
+
+            <span>📈 Mainboard IPO</span>
+
+            <span>⚡ Fast Updates</span>
+
+            <span>🏛 Official Registrars</span>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- =============== LIVE TICKER =============== -->
+
+<section class="ticker-section">
+
+    <div class="ticker-title">
+        🔥 LIVE UPDATES
+    </div>
+
+    <div class="ticker">
+
+        <div class="ticker-content" id="ticker">
+            Loading latest IPO allotments...
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= MAIN ================= -->
+
+<section class="main-container">
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Search IPO Name...">
+
+    </div>
+
+    <!-- DASHBOARD -->
+
+    <div class="stats-grid">
+
+        <!-- Total -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📋
+            </div>
+
+            <div class="stat-number" id="totalCount">
+                0
+            </div>
+
+            <div class="stat-text">
+                Total IPOs
+            </div>
+
+        </div>
+
+        <!-- Upcoming -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🟠
+            </div>
+
+            <div class="stat-number" id="upcomingCount">
+                0
+            </div>
+
+            <div class="stat-text">
+                Upcoming
+            </div>
+
+        </div>
+
+        <!-- Today's Allotment -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🟢
+            </div>
+
+            <div class="stat-number" id="todayCount">
+                0
+            </div>
+
+            <div class="stat-text">
+                Today's Allotment
+            </div>
+
+        </div>
+
+        <!-- Closed -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                ⚫
+            </div>
+
+            <div class="stat-number" id="closedCount">
+                0
+            </div>
+
+            <div class="stat-text">
+                Closed
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters">
+
+    <button class="filter-btn active"
+            data-filter="all">
+        All IPOs
+    </button>
+
+    <button class="filter-btn"
+            data-filter="Upcoming">
+        Upcoming
+    </button>
+
+    <button class="filter-btn"
+            data-filter="Today's Allotment">
+        Today's Allotment
+    </button>
+
+    <button class="filter-btn"
+            data-filter="Closed">
+        Closed
+    </button>
+
+</div>
+
+<!-- IPO GRID -->
+
+<div id="cards"
+     class="cards-grid">
+
+</div>
+
+<!-- ================= EMPTY STATE ================= -->
+
+<div id="emptyState"
+     class="empty-state"
+     style="display:none;">
+
+    <img src="{{ url_for('static', filename='logo.jpg') }}"
+         alt="BE.IPOWALE">
+
+    <h2>No IPO Found</h2>
+
+    <p>
+        We couldn't find any IPO matching your search.
+        Try another company name.
+    </p>
+
+</div>
+
+</section>
+
+<!-- ================= HOW TO CHECK ================= -->
+
+<section class="how-section">
+
+    <div class="section-title">
+
+        <h2>How to Check IPO Allotment?</h2>
+
+        <p>
+            Follow these simple steps to check your IPO allotment status.
+        </p>
+
+    </div>
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <h3>Select IPO</h3>
+
+            <p>
+                Choose your IPO from the list and click
+                <strong>Check Allotment</strong>.
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <h3>Official Registrar</h3>
+
+            <p>
+                You will be redirected to the official registrar website.
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <h3>Enter Details</h3>
+
+            <p>
+                Enter PAN, Application Number or DP ID and submit.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= REGISTRARS ================= -->
+
+<section class="registrars">
+
+    <div class="section-title">
+
+        <h2>Official Registrars</h2>
+
+        <p>
+            BE.IPOWALE redirects only to official registrar websites.
+        </p>
+
+    </div>
+
+    <div class="registrar-grid">
+
+        <a href="https://ipostatus.kfintech.com/ipostatus"
+           target="_blank"
+           class="registrar-card">
+
+            <h3>KFin Technologies</h3>
+
+            <span>Official IPO Registrar</span>
+
+        </a>
+
+        <a href="https://in.mpms.mufg.com/Initial_Offer/public-issues.html"
+           target="_blank"
+           class="registrar-card">
+
+            <h3>MUFG Intime</h3>
+
+            <span>Official IPO Registrar</span>
+
+        </a>
+
+        <a href="https://ipo.bigshareonline.com/IPO_Status.html"
+           target="_blank"
+           class="registrar-card">
+
+            <h3>Bigshare Services</h3>
+
+            <span>Official IPO Registrar</span>
+
+        </a>
+
+        <a href="https://linkintime.co.in/initial_offer/public-issues.html"
+           target="_blank"
+           class="registrar-card">
+
+            <h3>Link Intime</h3>
+
+            <span>Official IPO Registrar</span>
+
+        </a>
+
+        <a href="https://www.skylinerta.com/ipo.php"
+           target="_blank"
+           class="registrar-card">
+
+            <h3>Skyline Financial</h3>
+
+            <span>Official IPO Registrar</span>
+
+        </a>
+
+        <a href="https://www.purvashare.com/"
+           target="_blank"
+           class="registrar-card">
+
+            <h3>Purva Sharegistry</h3>
+
+            <span>Official IPO Registrar</span>
+
+        </a>
+
+    </div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <img src="{{ url_for('static', filename='logo.jpg') }}"
+         class="footer-logo"
+         alt="BE.IPOWALE">
+
+    <h3>BE.IPOWALE</h3>
+
+    <p>
+        Your trusted destination for Mainboard IPO Updates,
+        GMP, Subscription, Allotment & Listing Information.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="/">Home</a>
+
+        <a href="/ipo-calendar">IPO Calendar</a>
+
+        <a href="/allotment">Allotment</a>
+
+        <a href="/contact">Contact</a>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 BE.IPOWALE. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button id="topBtn">
+    ⬆
+</button>
+
+<!-- ================= LOADING ================= -->
+
+<div id="loading">
+
+    <div class="loader"></div>
+
+</div>
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="{{ url_for('static', filename='js/allotment.js') }}"></script>
+
+</body>
+
+</html>
