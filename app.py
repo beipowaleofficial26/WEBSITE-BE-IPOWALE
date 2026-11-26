@@ -18,7 +18,7 @@ GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbz0yGOIyMZ1-4IC4
 
 # IPO CALENDAR - ORIGINAL PUBLISHED GOOGLE SHEET CSV
 # Keep this separate from the Documents Apps Script URL.
-GOOGLE_CALENDAR_CSV_URL = "https://script.google.com/macros/s/AKfycbyAD1KbdfUG3_ocHuNTqZsYU8z0hDYMXTHkPyyrPmqJlf6m1pLq0--c-yol_h9cfid6/exec"
+GOOGLE_CALENDAR_API_URL = "https://script.google.com/macros/s/AKfycbyAD1KbdfUG3_ocHuNTqZsYU8z0hDYMXTHkPyyrPmqJlf6m1pLq0--c-yol_h9cfid6/exec"
 
 
 app = Flask(__name__)
