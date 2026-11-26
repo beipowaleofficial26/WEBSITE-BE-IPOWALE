@@ -16,7 +16,7 @@ GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbz0yGOIyMZ1-4IC4
 
 # IPO CALENDAR - NEW GOOGLE APPS SCRIPT JSON API
 # Replace this URL with your NEW calendar Apps Script /exec URL
-GOOGLE_CALENDAR_JSON_URL = "https://script.google.com/macros/s/AKfycbyAD1KbdfUG3_ocHuNTqZsYU8z0hDYMXTHkPyyrPmqJlf6m1pLq0--c-yol_h9cfid6/exec"
+GOOGLE_CALENDAR_JSON_URL = "https://script.google.com/macros/s/AKfycbwd3jKROFaVepvOWqaPIaSNzCY4-AgawR4TH0ELBN49CQgcmQHB7krshGplxNUinL8z/exec"
 
 
 app = Flask(__name__)
