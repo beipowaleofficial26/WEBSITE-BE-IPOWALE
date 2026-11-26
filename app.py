@@ -3,8 +3,6 @@ from flask import Flask, render_template, jsonify
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import os
-import csv
-import io
 import requests
 
 
@@ -12,13 +10,13 @@ import requests
 # GOOGLE SHEETS CONFIGURATION
 # =========================================================
 
-# IPO DOCUMENTS - GOOGLE APPS SCRIPT JSON API
+# IPO DOCUMENTS - EXISTING GOOGLE APPS SCRIPT JSON API
 GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbz0yGOIyMZ1-4IC4Oply0x9UcPWZQ44Ude4b_S8nOB7fnok9xlI9efs7BWoRQpqpEecrg/exec"
 
 
-# IPO CALENDAR - ORIGINAL PUBLISHED GOOGLE SHEET CSV
-# Keep this separate from the Documents Apps Script URL.
-GOOGLE_CALENDAR_API_URL = "https://script.google.com/macros/s/AKfycbyAD1KbdfUG3_ocHuNTqZsYU8z0hDYMXTHkPyyrPmqJlf6m1pLq0--c-yol_h9cfid6/exec"
+# IPO CALENDAR - NEW GOOGLE APPS SCRIPT JSON API
+# Replace this URL with your NEW calendar Apps Script /exec URL
+GOOGLE_CALENDAR_JSON_URL = "https://script.google.com/macros/s/AKfycbyAD1KbdfUG3_ocHuNTqZsYU8z0hDYMXTHkPyyrPmqJlf6m1pLq0--c-yol_h9cfid6/exec"
 
 
 app = Flask(__name__)
@@ -130,7 +128,7 @@ def ipo_calendar():
 
 
 # =========================================================
-# IPO DOCUMENTS GOOGLE SHEET JSON API
+# IPO DOCUMENTS GOOGLE SHEETS JSON API
 # =========================================================
 
 @app.route("/api/documents")
@@ -191,14 +189,12 @@ def api_ipo_documents():
 
             documents.append({
 
-                # Uppercase keys for existing frontend
                 "Company": company,
                 "Type": doc_type,
                 "Document Name": document_name,
                 "Document Type": document_type,
                 "Document URL": document_url,
 
-                # Lowercase keys for compatibility
                 "company": company,
                 "type": doc_type,
                 "name": document_name,
@@ -238,7 +234,7 @@ def api_ipo_documents():
 
 
 # =========================================================
-# IPO CALENDAR GOOGLE SHEET CSV API
+# IPO CALENDAR GOOGLE SHEETS JSON API
 # =========================================================
 
 @app.route("/api/ipo-calendar")
@@ -246,9 +242,18 @@ def ipo_calendar_data():
 
     try:
 
+        if (
+            not GOOGLE_CALENDAR_JSON_URL
+            or "PASTE_YOUR_NEW" in GOOGLE_CALENDAR_JSON_URL
+        ):
+            raise ValueError(
+                "Please configure your IPO Calendar Google Apps Script URL"
+            )
+
         response = requests.get(
-            GOOGLE_CALENDAR_CSV_URL,
-            timeout=20,
+            GOOGLE_CALENDAR_JSON_URL,
+            timeout=30,
+            allow_redirects=True,
             headers={
                 "User-Agent": "Mozilla/5.0"
             }
@@ -256,44 +261,41 @@ def ipo_calendar_data():
 
         response.raise_for_status()
 
-        csv_text = response.text.lstrip("\ufeff")
+        data = response.json()
 
-        reader = csv.DictReader(
-            io.StringIO(csv_text)
-        )
+        if not isinstance(data, list):
+
+            raise ValueError(
+                "Invalid Google Sheets JSON response: " +
+                str(data)
+            )
 
         calendar_data = []
 
-        for row in reader:
+        for row in data:
 
-            company = row.get(
-                "Company",
-                ""
+            company = str(
+                row.get("Company", "")
             ).strip()
 
-            ipo_type = row.get(
-                "Type",
-                ""
+            ipo_type = str(
+                row.get("Type", "")
             ).strip()
 
-            open_date = row.get(
-                "Open Date",
-                ""
+            open_date = str(
+                row.get("Open Date", "")
             ).strip()
 
-            close_date = row.get(
-                "Close Date",
-                ""
+            close_date = str(
+                row.get("Close Date", "")
             ).strip()
 
-            allotment_date = row.get(
-                "Allotment Date",
-                ""
+            allotment_date = str(
+                row.get("Allotment Date", "")
             ).strip()
 
-            listing_date = row.get(
-                "Listing Date",
-                ""
+            listing_date = str(
+                row.get("Listing Date", "")
             ).strip()
 
             if not company:
@@ -302,15 +304,10 @@ def ipo_calendar_data():
             calendar_data.append({
 
                 "company": company,
-
                 "type": ipo_type or "Mainboard",
-
                 "open_date": open_date,
-
                 "close_date": close_date,
-
                 "allotment_date": allotment_date,
-
                 "listing_date": listing_date
 
             })
@@ -321,6 +318,17 @@ def ipo_calendar_data():
         )
 
         return jsonify(calendar_data)
+
+    except requests.exceptions.RequestException:
+
+        app.logger.exception(
+            "IPO CALENDAR GOOGLE SHEETS CONNECTION ERROR"
+        )
+
+        return jsonify({
+            "error": True,
+            "message": "Unable to connect to IPO Calendar Google Sheets"
+        }), 502
 
     except Exception:
 
