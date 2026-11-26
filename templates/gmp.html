@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IPO Calendar & GMP | BE.IPOWale</title>
-<meta name="description" content="Track IPO opening dates, closing dates, allotment dates, listing dates, GMP and estimated profit per lot.">
+<title>IPO Details & Unlisted Price | BE.IPOWale</title>
+<meta name="description" content="Track IPO opening dates, closing dates, allotment dates, listing dates, Unlisted Premium and estimated profit per lot.">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
@@ -59,8 +59,8 @@ header a{color:white;text-decoration:none}
 <div class="container">
 
 <section class="hero">
-<h1>IPO Calendar & GMP</h1>
-<p>All IPO dates, Grey Market Premium and estimated listing profit in one place.</p>
+<h1>IPO Details</h1>
+<p>All IPO dates, Unlisted Price and estimated listing profit in one place.</p>
 </section>
 
 <section class="stats">
@@ -92,7 +92,7 @@ header a{color:white;text-decoration:none}
 </div>
 
 <div class="disclaimer">
-<strong>Disclaimer:</strong> GMP (Grey Market Premium) is unofficial and speculative. GMP and estimated profit are indicative only and are not guaranteed returns. BE.IPOWale is not a SEBI registered investment adviser. Please verify all IPO details from official sources before investing.
+<strong>Disclaimer:</strong> Unlisted Price is unofficial and speculative. Est. Premium and estimated profit are indicative only and are not guaranteed returns. BE.IPOWale is not a SEBI registered investment adviser. Please verify all IPO details from official sources before investing.
 </div>
 
 </div>
@@ -104,7 +104,7 @@ header a{color:white;text-decoration:none}
 
 <script>
 // REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-const API_URL = "https://script.google.com/macros/s/AKfycbzprmjkh8vwLqa4Nl8KfaO6HyMxWuD6pZu9a-wWTEfY-xh2FP6uuS91vDgmICBsN4u9/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbx3z6aj64eVx8NhgmDgKGEPap5tAOpXGBqv6QXD1iMmB2FJpt6lpTFXGK2kB4GJp8GC/exec";
 
 let allIPOs = [];
 
@@ -214,7 +214,7 @@ metric("Lot Size",lot ? lot.toLocaleString("en-IN")+" Shares" : "—",true);
 
 const price = document.createElement("div");
 price.className = "price";
-price.textContent = "GMP is unofficial and subject to change.";
+price.textContent = "Unlisted Gain is unofficial and subject to change.";
 
 card.append(head,dates,metrics,price);
 
