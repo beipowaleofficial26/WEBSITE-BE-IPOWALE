@@ -2,39 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://beipowale.onrender.com/</loc>
+    <loc>https://be-ipowale.onrender.com/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://beipowale.onrender.com/blog</loc>
+    <loc>https://be-ipowale.onrender.com/blog</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://beipowale.onrender.com/contact</loc>
+    <loc>https://be-ipowale.onrender.com/contact</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://beipowale.onrender.com/terms</loc>
+    <loc>https://be-ipowale.onrender.com/terms</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-   <loc>https://beipowale.onrender.com/allotment</loc>
+   <loc>https://be-ipowale.onrender.com/allotment</loc>
    <changefreq>daily</changefreq>
    <priority>0.9</priority>
 </url>
    <url>
-   <loc>https://beipowale.onrender.com/ipo-calendar</loc>
+   <loc>https://be-ipowale.onrender.com/ipo-calendar</loc>
    <changefreq>daily</changefreq>
    <priority>0.9</priority>
 </url>
