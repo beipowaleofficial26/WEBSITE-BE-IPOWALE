@@ -30,16 +30,6 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-
-# =========================================================
-# ALLOTMENT
-# =========================================================
-
-@app.route("/allotment")
-def allotment():
-    return render_template("allotment.html")
-
-
 # =========================================================
 # CONTACT
 # =========================================================
