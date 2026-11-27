@@ -149,114 +149,162 @@
         
     </nav>
 
-<!-- BE.IPOWale App Promotion -->
-<section class="app-promo">
-  <div class="app-promo-content">
-    <div class="app-promo-icon">BE</div>
 
-    <div class="app-promo-text">
-      <span class="app-label">OFFICIAL ANDROID APP</span>
-      <h2>Your IPO Updates, Now in Your Pocket!</h2>
-      <p>
-        Get a simple and convenient experience with
-        the BE.IPOWale Android App.
-      </p>
+<!-- BE.IPOWale Android App Promotion -->
+<section class="vertex-app-promo">
+    <div class="vertex-app-inner">
 
-      <a href="https://www.mediafire.com/file/lpqamp81t6v94i5/be_ipowale.apk/file"
-         class="app-download-btn"
-         target="_blank">
-        <span>↓</span> Download App
-      </a>
+        <div class="vertex-app-logo">
+            BE
+        </div>
+
+        <div class="vertex-app-info">
+            <span class="vertex-app-label">
+                OFFICIAL ANDROID APP
+            </span>
+
+            <h2>Your IPO Updates, Now in Your Pocket!</h2>
+
+            <p>
+                Get a simple and convenient experience with
+                the BE.IPOWale Android App.
+            </p>
+
+            <a href="YOUR_APK_DOWNLOAD_LINK"
+               class="vertex-app-button"
+               target="_blank"
+               rel="noopener">
+                <span>↓</span> Download Android App
+            </a>
+        </div>
+
     </div>
-  </div>
 </section>
 
 <style>
-.app-promo{
-  margin:20px auto;
-  max-width:1200px;
-  padding:28px;
-  border-radius:18px;
-  background:linear-gradient(120deg,#142653,#244c91);
-  color:white;
-  box-sizing:border-box;
+.vertex-app-promo,
+.vertex-app-promo * {
+    box-sizing: border-box;
 }
 
-.app-promo-content{
-  display:flex;
-  align-items:center;
-  gap:22px;
+.vertex-app-promo {
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #142653, #244c91);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    clear: both;
 }
 
-.app-promo-icon{
-  min-width:75px;
-  height:75px;
-  border-radius:18px;
-  background:white;
-  color:#142653;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:25px;
-  font-weight:800;
+.vertex-app-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 900px;
+    margin: auto;
 }
 
-.app-label{
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  color:#b9d2ff;
+.vertex-app-logo {
+    width: 76px;
+    height: 76px;
+    min-width: 76px;
+    background: #ffffff;
+    color: #142653;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 800;
 }
 
-.app-promo-text h2{
-  font-size:25px;
-  margin:8px 0;
+.vertex-app-info {
+    flex: 1;
+    min-width: 0;
 }
 
-.app-promo-text p{
-  color:#dce6fa;
-  font-size:14px;
-  margin:0 0 18px;
+.vertex-app-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #b9d2ff;
 }
 
-.app-download-btn{
-  display:inline-block;
-  background:white;
-  color:#142653;
-  text-decoration:none;
-  padding:12px 22px;
-  border-radius:9px;
-  font-weight:700;
-  font-size:14px;
+.vertex-app-info h2 {
+    color: #ffffff;
+    font-size: 26px;
+    line-height: 1.4;
+    margin: 9px 0;
 }
 
-.app-download-btn:hover{
-  background:#e8efff;
+.vertex-app-info p {
+    color: #e0e9ff;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 18px;
 }
 
-@media(max-width:600px){
-  .app-promo{
-    margin:14px 12px;
-    padding:22px 18px;
-  }
+.vertex-app-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #142653;
+    padding: 13px 22px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
 
-  .app-promo-content{
-    align-items:flex-start;
-    gap:14px;
-  }
+.vertex-app-button:hover {
+    background: #e5edff;
+    transform: translateY(-2px);
+}
 
-  .app-promo-icon{
-    min-width:48px;
-    height:48px;
-    font-size:17px;
-    border-radius:12px;
-  }
+@media (max-width: 600px) {
+    .vertex-app-promo {
+        width: calc(100% - 24px);
+        margin: 18px auto;
+        padding: 22px 17px;
+        border-radius: 14px;
+    }
 
-  .app-promo-text h2{
-    font-size:19px;
-  }
+    .vertex-app-inner {
+        gap: 13px;
+        align-items: flex-start;
+    }
+
+    .vertex-app-logo {
+        width: 49px;
+        height: 49px;
+        min-width: 49px;
+        font-size: 17px;
+        border-radius: 12px;
+    }
+
+    .vertex-app-info h2 {
+        font-size: 19px;
+        line-height: 1.4;
+    }
+
+    .vertex-app-info p {
+        font-size: 13px;
+    }
+
+    .vertex-app-button {
+        padding: 11px 15px;
+        font-size: 12px;
+    }
 }
 </style>
+
 
 </header>
 <!---Sebi Advisory-->
