@@ -72,6 +72,15 @@ def terms():
 @app.route("/ipo")
 def gmp():
     return render_template("ipo.html")
+
+#=============================================
+# DOWNLOAD OUR APP
+#=============================================
+
+@app.route('/app')
+def app_download():
+    return render_template('app.html')
+
     
 # =========================================================
 # IPO CALENDAR PAGE
