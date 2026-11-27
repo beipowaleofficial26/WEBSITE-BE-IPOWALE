@@ -79,9 +79,9 @@ def terms():
 # GMP
 # =======================================================
 
-@app.route("/gmp")
+@app.route("/ipo")
 def gmp():
-    return render_template("gmp.html")
+    return render_template("ipo.html")
     
 # =========================================================
 # IPO CALENDAR PAGE
